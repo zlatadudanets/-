@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Дуданец З.Е.</title>
+  <title>Дуданец</title>
   <style>
     .responsive-image {
       width: 25%;
@@ -12,6 +12,10 @@
       max-width: 100%;
       height: auto;
     }
+    .image-map-container {
+      position: relative;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -19,7 +23,7 @@
   <ul>
     <li><a href="http://kubsu.ru/">КубГУ (http)</a></li>
     <li><a href="https://kubsu.ru/">КубГУ (https)</a></li>
-    <li><a href="https://kubsu.ru/"><img src="img/c:\Users\Admin\Downloads\images.jpeg" alt="Картинка" class="responsive-image"></a></li>
+    <li><a href="https://kubsu.ru/"><img src="image.jpg" alt="Фасад КубГУ" class="responsive-image"></a></li>
     <li><a href="Catalog/second-page.html">Сокращённая внутренняя</a></li>
     <li><a href="MainPage.html">Сокращённая главная</a></li>
     <li><a href="#form">Ссылка на фрагмент текущей страницы</a></li>
@@ -32,11 +36,20 @@
     <li>В тексте <a href="https://kubsu.ru/">ссылка</a> внутри абзаца.</li>
     <li><a href="https://example.com/page#section-id">Фрагмент стороннего сайта</a></li>
     <li>
-      <map name="kartinka">
-        <area shape="rect" coords="35,35,350,190" href="https://kubsu.ru" alt="Сайт кубгу, прямоугольник">
-        <area shape="circle" coords="180,375,125" href="https://kubsu.ru/index.php" alt="Сайт кубгу, круг">
-      </map>
-      <img src="img/kartinka.jpg" usemap="#kartinka" alt="Картинка" style="width: 400px; height: auto;">
+      <!-- Карта изображения с картинкой КубГУ -->
+      <div class="image-map-container">
+        <map name="kubgu-map">
+          <!-- Прямоугольная область - левая часть здания -->
+          <area shape="rect" coords="50,100,300,400" href="https://kubsu.ru" alt="Основной сайт КубГУ">
+          <!-- Круглая область - правая часть здания -->
+          <area shape="circle" coords="600,250,80" href="https://kubsu.ru/index.php" alt="Главная страница КубГУ">
+          <!-- Дополнительная область - центральная часть -->
+          <area shape="poly" coords="350,150,450,150,450,350,350,350" href="https://kubsu.ru/ru/university" alt="Об университете">
+        </map>
+        <img src="kubgu_fasad_1000h390.jpg" usemap="#kubgu-map" alt="Фасад КубГУ с интерактивными областями" style="width: 800px; height: auto;">
+        <div style="margin-top: 10px; font-size: 14px; color: #666;">
+        </div>
+      </div>
     </li>
     <li><a href="">Пустой href</a></li>
     <li><a>Без href</a></li>
