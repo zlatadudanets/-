@@ -1,49 +1,7 @@
-/* ===== MOBILE FIRST APPROACH ===== */
-/* Базовые стили для мобильных устройств (портретная ориентация) */
+/* ===== BOOTSTRAP CUSTOM STYLES ===== */
+/* Дополнительные стили для Bootstrap компонентов */
 
-/* Общие стили */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f5f5f5;
-}
-
-.container {
-  width: 100%;
-  padding: 0 15px;
-}
-
-/* ===== MOBILE LAYOUT ===== */
-
-/* Header - мобильная версия */
-#main-header {
-  background-color: #2c3e50;
-  color: white;
-  padding: 15px 0;
-  width: 100%;
-}
-
-#main-header .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.logo-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
+/* Logo стили */
 .logo {
   width: 50px;
   height: 50px;
@@ -52,127 +10,11 @@ body {
 }
 
 .site-name {
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin: 0;
-  text-align: center;
 }
 
-/* Navigation - мобильная версия (вертикальное меню) */
-.main-nav {
-  width: 100%;
-  background-color: #34495e;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 0;
-}
-
-.nav-list li a {
-  color: white;
-  text-decoration: none;
-  padding: 12px 16px;
-  border-radius: 3px;
-  display: block;
-  text-align: center;
-  background-color: #2c3e50;
-  transition: background-color 0.3s;
-}
-
-.nav-list li a:hover {
-  background-color: #1a252f;
-}
-
-/* Main content - мобильная версия */
-.main-content {
-  padding: 20px 0;
-  min-height: calc(100vh - 200px);
-}
-
-.content-section {
-  background-color: white;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  width: 100%;
-}
-
-.content-section h2 {
-  color: #2c3e50;
-  margin-bottom: 15px;
-  font-size: 24px;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 8px;
-}
-
-.content-section h3 {
-  color: #34495e;
-  margin: 15px 0 10px 0;
-  font-size: 20px;
-}
-
-/* Flex Box Order для мобильных устройств */
-/* На мобильных: таблица должна отображаться ВИЗУАЛЬНО выше списка ссылок */
-#table {
-  order: 1;
-}
-
-#links {
-  order: 2;
-}
-
-#form {
-  order: 3;
-}
-
-/* Links section - мобильная версия */
-.links-list {
-  list-style-type: disc;
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.links-list li {
-  margin-bottom: 8px;
-}
-
-.links-list a {
-  color: #3498db;
-  text-decoration: none;
-}
-
-.links-list a:hover {
-  text-decoration: underline;
-}
-
-.title-links {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.title-links a {
-  color: #e74c3c;
-  text-decoration: none;
-}
-
-.title-links a:hover {
-  text-decoration: underline;
-}
-
-.responsive-image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 5px;
-}
-
+/* Image map container */
 .image-map-container {
   position: relative;
   display: inline-block;
@@ -180,312 +22,234 @@ body {
   width: 100%;
 }
 
-.map-image {
-  width: 100%;
-  max-width: 400px;
+.image-map-container img {
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Table - мобильная версия */
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  font-size: 14px;
-}
-
-.data-table th {
-  background-color: #3498db;
-  color: white;
-  padding: 10px 8px;
-  text-align: left;
-  font-weight: bold;
-  border: 1px solid #2980b9;
-  font-size: 12px;
-}
-
-.data-table td {
-  padding: 8px;
-  border: 1px solid #ddd;
-  font-size: 12px;
-}
-
-.data-table tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
-}
-
-.data-table tbody tr:nth-child(odd) {
-  background-color: #e9ecef;
-}
-
-.data-table tbody tr:hover {
-  background-color: #d1ecf1;
-}
-
-/* Form - мобильная версия */
-form table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-form table td {
-  padding: 8px;
-  vertical-align: top;
-  display: block;
-  border: none;
-}
-
-form table tr {
-  display: block;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-form table td:first-child {
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #2c3e50;
-}
-
-form input[type="text"],
-form input[type="tel"],
-form input[type="email"],
-form input[type="date"],
-form select,
-form textarea {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-form input[type="radio"] {
-  margin-right: 8px;
-}
-
-form label {
-  margin-right: 15px;
-  font-weight: normal;
-}
-
-form input[type="submit"] {
-  background-color: #27ae60;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  transition: background-color 0.3s;
-}
-
-form input[type="submit"]:hover {
-  background-color: #229954;
-}
-
-/* Footer - мобильная версия */
-#main-footer {
-  background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  width: 100%;
-  margin-top: auto;
-}
-
-#main-footer p {
-  margin: 0;
-  font-size: 14px;
-}
-
-/* ===== MEDIA QUERIES ===== */
-
-/* Планшеты (768px и выше) */
-@media (min-width: 768px) {
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Mobile First - дополнительные стили для мобильных */
+@media (max-width: 767.98px) {
+  .logo {
+    width: 40px;
+    height: 40px;
   }
-
-  /* Header - планшетная версия */
-  #main-header {
-    padding: 20px 0;
+  
+  .site-name {
+    font-size: 1.25rem;
   }
-
-  #main-header .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  
+  /* На мобильных устройствах таблица должна отображаться выше списка ссылок */
+  #table {
+    order: 1;
   }
-
-  .logo-section {
-    flex-direction: row;
-    gap: 15px;
+  
+  #links {
+    order: 2;
   }
+  
+  #form {
+    order: 3;
+  }
+  
+  /* Скрываем некоторые колонки таблицы на мобильных */
+  .table-responsive .table th:nth-child(3),
+  .table-responsive .table td:nth-child(3) {
+    display: none;
+  }
+  
+  .table-responsive .table th:nth-child(5),
+  .table-responsive .table td:nth-child(5) {
+    display: none;
+  }
+}
 
+/* Планшеты */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .site-name {
+    font-size: 1.4rem;
+  }
+  
+  /* Скрываем описание на планшетах */
+  .table-responsive .table th:nth-child(3),
+  .table-responsive .table td:nth-child(3) {
+    display: none;
+  }
+}
+
+/* Десктопы */
+@media (min-width: 992px) {
   .logo {
     width: 60px;
     height: 60px;
   }
-
+  
   .site-name {
-    font-size: 24px;
-    text-align: left;
+    font-size: 1.5rem;
   }
-
-  /* Navigation - планшетная версия (горизонтальное меню) */
-  .main-nav {
-    width: auto;
-    padding: 10px 20px;
-  }
-
-  .nav-list {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .nav-list li a {
-    padding: 8px 16px;
-    display: inline-block;
-    text-align: center;
-    background-color: transparent;
-  }
-
-  .nav-list li a:hover {
-    background-color: #2c3e50;
-  }
-
-  /* Main content - планшетная версия */
-  .main-content {
-    padding: 40px 0;
-  }
-
-  .content-section {
-    padding: 30px;
-    margin-bottom: 30px;
-  }
-
-  .content-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-  }
-
-  .content-section h3 {
-    font-size: 22px;
-    margin: 20px 0 15px 0;
-  }
-
-  /* Сброс Flex Box Order для планшетов и десктопов */
-  #table {
-    order: 2;
-  }
-
-  #links {
-    order: 1;
-  }
-
-  #form {
-    order: 3;
-  }
-
-  /* Links section - планшетная версия */
-  .links-list {
-    margin-bottom: 20px;
-  }
-
-  .links-list li {
-    margin-bottom: 10px;
-  }
-
-  .responsive-image {
-    width: 25%;
-    max-width: none;
-  }
-
-  .image-map-container {
-    margin: 20px 0;
-  }
-
-  .map-image {
-    width: 600px;
-    max-width: none;
-  }
-
-  /* Table - планшетная версия */
-  .data-table {
-    margin: 20px 0;
-    font-size: 16px;
-  }
-
-  .data-table th {
-    padding: 15px;
-    font-size: 16px;
-  }
-
-  .data-table td {
-    padding: 12px 15px;
-    font-size: 16px;
-  }
-
-  /* Form - планшетная версия */
-  form table tr {
-    display: table-row;
-    margin-bottom: 0;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-  }
-
-  form table td {
+  
+  /* Показываем все колонки на десктопах */
+  .table-responsive .table th,
+  .table-responsive .table td {
     display: table-cell;
-    padding: 15px;
-    border: 1px solid #ddd;
-    vertical-align: top;
-  }
-
-  form table td:first-child {
-    background-color: #f8f9fa;
-    font-weight: bold;
-    width: 200px;
-    margin-bottom: 0;
-  }
-
-  form input[type="submit"] {
-    width: auto;
-  }
-
-  /* Footer - планшетная версия */
-  #main-footer {
-    padding: 20px 0;
-  }
-
-  #main-footer p {
-    font-size: 16px;
   }
 }
 
-/* Десктопы (1024px и выше) */
-@media (min-width: 1024px) {
+/* Дополнительные стили для карточек */
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+  border-bottom: none;
+}
+
+/* Стили для навигации */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Стили для форм */
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Стили для кнопок */
+.btn {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Стили для списков */
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* Стили для таблиц */
+.table th {
+  border-top: none;
+  font-weight: 600;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Анимации */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Стили для бейджей */
+.badge {
+  font-size: 0.75em;
+  padding: 0.5em 0.75em;
+}
+
+/* Дополнительные утилиты */
+.shadow-custom {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для изображений */
+.img-fluid {
+  border-radius: 8px;
+}
+
+/* Стили для футера */
+footer {
+  margin-top: auto;
+}
+
+/* Общие стили для body */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Стили для контейнера */
+.container {
+  max-width: 1200px;
+}
+
+/* Дополнительные responsive стили */
+@media (max-width: 575.98px) {
   .container {
-    padding: 0 30px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .btn-lg {
+    width: 100%;
+  }
+}
 
-  .map-image {
-    width: 800px;
-  }
+/* Стили для улучшения читаемости */
+.text-decoration-none:hover {
+  text-decoration: underline !important;
+}
 
-  .responsive-image {
-    width: 25%;
-  }
+/* Стили для активных ссылок */
+.nav-link.active {
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 5px;
+}
+
+/* Дополнительные стили для таблицы */
+.table-responsive {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Стили для формы */
+.form-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Стили для чекбоксов и радиокнопок */
+.form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Стили для селекта */
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
 }
