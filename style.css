@@ -1,3 +1,6 @@
+/* ===== MOBILE FIRST APPROACH ===== */
+/* Базовые стили для мобильных устройств (портретная ориентация) */
+
 /* Общие стили */
 * {
   margin: 0;
@@ -13,107 +16,131 @@ body {
 }
 
 .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 100%;
+  padding: 0 15px;
 }
 
-/* Header */
+/* ===== MOBILE LAYOUT ===== */
+
+/* Header - мобильная версия */
 #main-header {
   background-color: #2c3e50;
   color: white;
-  padding: 20px 0;
+  padding: 15px 0;
   width: 100%;
 }
 
 #main-header .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-section {
-  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 15px;
 }
 
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .site-name {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
+  text-align: center;
 }
 
-/* Navigation */
+/* Navigation - мобильная версия (вертикальное меню) */
 .main-nav {
+  width: 100%;
   background-color: #34495e;
-  padding: 10px 20px;
+  padding: 15px;
   border-radius: 5px;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
   margin: 0;
 }
 
 .nav-list li a {
   color: white;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border-radius: 3px;
+  display: block;
+  text-align: center;
+  background-color: #2c3e50;
   transition: background-color 0.3s;
 }
 
 .nav-list li a:hover {
-  background-color: #2c3e50;
+  background-color: #1a252f;
 }
 
-/* Main content */
+/* Main content - мобильная версия */
 .main-content {
-  padding: 40px 0;
+  padding: 20px 0;
   min-height: calc(100vh - 200px);
 }
 
 .content-section {
   background-color: white;
-  margin-bottom: 30px;
-  padding: 30px;
+  margin-bottom: 20px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
 .content-section h2 {
   color: #2c3e50;
-  margin-bottom: 20px;
-  font-size: 28px;
+  margin-bottom: 15px;
+  font-size: 24px;
   border-bottom: 2px solid #3498db;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .content-section h3 {
   color: #34495e;
-  margin: 20px 0 15px 0;
-  font-size: 22px;
+  margin: 15px 0 10px 0;
+  font-size: 20px;
 }
 
-/* Links section */
+/* Flex Box Order для мобильных устройств */
+/* На мобильных: таблица должна отображаться ВИЗУАЛЬНО выше списка ссылок */
+#table {
+  order: 1;
+}
+
+#links {
+  order: 2;
+}
+
+#form {
+  order: 3;
+}
+
+/* Links section - мобильная версия */
 .links-list {
   list-style-type: disc;
   margin-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .links-list li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .links-list a {
@@ -127,7 +154,7 @@ body {
 
 .title-links {
   margin-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .title-links a {
@@ -140,7 +167,8 @@ body {
 }
 
 .responsive-image {
-  width: 25%;
+  width: 100%;
+  max-width: 200px;
   height: auto;
   border-radius: 5px;
 }
@@ -148,37 +176,42 @@ body {
 .image-map-container {
   position: relative;
   display: inline-block;
-  margin: 20px 0;
+  margin: 15px 0;
+  width: 100%;
 }
 
 .map-image {
-  width: 800px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Table */
+/* Table - мобильная версия */
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 15px 0;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-size: 14px;
 }
 
 .data-table th {
   background-color: #3498db;
   color: white;
-  padding: 15px;
+  padding: 10px 8px;
   text-align: left;
   font-weight: bold;
   border: 1px solid #2980b9;
+  font-size: 12px;
 }
 
 .data-table td {
-  padding: 12px 15px;
+  padding: 8px;
   border: 1px solid #ddd;
+  font-size: 12px;
 }
 
 .data-table tbody tr:nth-child(even) {
@@ -193,49 +226,266 @@ body {
   background-color: #d1ecf1;
 }
 
-/* Form - базовые стили как в оригинале */
+/* Form - мобильная версия */
 form table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 form table td {
-  padding: 5px;
+  padding: 8px;
   vertical-align: top;
+  display: block;
+  border: none;
 }
 
-/* Footer */
+form table tr {
+  display: block;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+form table td:first-child {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="date"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+form input[type="radio"] {
+  margin-right: 8px;
+}
+
+form label {
+  margin-right: 15px;
+  font-weight: normal;
+}
+
+form input[type="submit"] {
+  background-color: #27ae60;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+  background-color: #229954;
+}
+
+/* Footer - мобильная версия */
 #main-footer {
   background-color: #2c3e50;
   color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 15px 0;
   width: 100%;
   margin-top: auto;
 }
 
 #main-footer p {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+/* ===== MEDIA QUERIES ===== */
+
+/* Планшеты (768px и выше) */
+@media (min-width: 768px) {
   .container {
-    padding: 0 15px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
-  
+
+  /* Header - планшетная версия */
+  #main-header {
+    padding: 20px 0;
+  }
+
   #main-header .container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-section {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .site-name {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  /* Navigation - планшетная версия (горизонтальное меню) */
+  .main-nav {
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  .nav-list {
+    flex-direction: row;
     gap: 20px;
   }
-  
-  .nav-list {
-    flex-direction: column;
-    gap: 10px;
+
+  .nav-list li a {
+    padding: 8px 16px;
+    display: inline-block;
+    text-align: center;
+    background-color: transparent;
   }
-  
+
+  .nav-list li a:hover {
+    background-color: #2c3e50;
+  }
+
+  /* Main content - планшетная версия */
+  .main-content {
+    padding: 40px 0;
+  }
+
+  .content-section {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  .content-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+
+  .content-section h3 {
+    font-size: 22px;
+    margin: 20px 0 15px 0;
+  }
+
+  /* Сброс Flex Box Order для планшетов и десктопов */
+  #table {
+    order: 2;
+  }
+
+  #links {
+    order: 1;
+  }
+
+  #form {
+    order: 3;
+  }
+
+  /* Links section - планшетная версия */
+  .links-list {
+    margin-bottom: 20px;
+  }
+
+  .links-list li {
+    margin-bottom: 10px;
+  }
+
+  .responsive-image {
+    width: 25%;
+    max-width: none;
+  }
+
+  .image-map-container {
+    margin: 20px 0;
+  }
+
   .map-image {
-    width: 100%;
-    max-width: 400px;
+    width: 600px;
+    max-width: none;
+  }
+
+  /* Table - планшетная версия */
+  .data-table {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  .data-table th {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .data-table td {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+
+  /* Form - планшетная версия */
+  form table tr {
+    display: table-row;
+    margin-bottom: 0;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  form table td {
+    display: table-cell;
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+
+  form table td:first-child {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 0;
+  }
+
+  form input[type="submit"] {
+    width: auto;
+  }
+
+  /* Footer - планшетная версия */
+  #main-footer {
+    padding: 20px 0;
+  }
+
+  #main-footer p {
+    font-size: 16px;
+  }
+}
+
+/* Десктопы (1024px и выше) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .map-image {
+    width: 800px;
+  }
+
+  .responsive-image {
+    width: 25%;
   }
 }

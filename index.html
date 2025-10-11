@@ -25,53 +25,6 @@
 
   <main class="main-content">
     <div class="container">
-      <section id="links" class="content-section">
-        <h2>Список гиперссылок</h2>
-        <ul class="links-list">
-          <li><a href="http://kubsu.ru/">КубГУ (http)</a></li>
-          <li><a href="https://kubsu.ru/">КубГУ (https)</a></li>
-          <li><a href="https://kubsu.ru/"><img src="image.jpg" alt="Фасад КубГУ" class="responsive-image"></a></li>
-          <li><a href="Catalog/second-page.html">Сокращённая внутренняя</a></li>
-          <li><a href="MainPage.html">Сокращённая главная</a></li>
-          <li><a href="#form">Ссылка на фрагмент текущей страницы</a></li>
-          <li><a href="https://www.kubsu.ru/ru/taxonomy/term/49?page=1&perpage=10&category=post">Ссылка с тремя параметрами</a></li>
-          <li><a href="https://www.kubsu.ru/ru/taxonomy/term/49#zone-footer-wrapper">Ссылка с параметром id</a></li>
-          <li><a href="./MainPage.html">относительная ссылка в текущем каталоге</a></li>
-          <li><a href="./about/about.html">относительная ссылка в каталоге about</a></li>
-          <li><a href="../Catalog/third-page.html">На уровень выше</a></li>
-          <li><a href="../../Catalog/catalog2/fourth-page.html">На два уровня выше</a></li>
-          <li>В тексте <a href="https://kubsu.ru/">ссылка</a> внутри абзаца.</li>
-          <li><a href="https://example.com/page#section-id">Фрагмент стороннего сайта</a></li>
-          <li>
-            <!-- Карта изображения с картинкой КубГУ -->
-            <div class="image-map-container">
-              <map name="kubgu-map">
-                <!-- Прямоугольная область - левая часть здания -->
-                <area shape="rect" coords="50,100,300,400" href="https://kubsu.ru" alt="Основной сайт КубГУ">
-                <!-- Круглая область - правая часть здания -->
-                <area shape="circle" coords="600,250,80" href="https://kubsu.ru/index.php" alt="Главная страница КубГУ">
-                <!-- Дополнительная область - центральная часть -->
-                <area shape="poly" coords="350,150,450,150,450,350,350,350" href="https://kubsu.ru/ru/university" alt="Об университете">
-              </map>
-              <img src="kubgu_fasad_1000h390.jpg" usemap="#kubgu-map" alt="Фасад КубГУ с интерактивными областями" class="map-image">
-            </div>
-          </li>
-          <li><a href="">Пустой href</a></li>
-          <li><a>Без href</a></li>
-          <li><a href="https://kubsu.ru/" rel="nofollow">nofollow</a></li>
-          <li><a href="https://kubsu.ru/noindex.html" rel="noindex">noindex</a></li>
-        </ul>
-
-        <h3>Список ссылок с title</h3>
-        <ol class="title-links">
-          <li><a href="http://kubsu.ru" title="Вот">Сайт КубГУ</a></li>
-          <li><a href="http://kubsu.ru" title="Сайт">Сайт КубГУ</a></li>
-          <li><a href="http://kubsu.ru" title="КубГУ">Сайт КубГУ</a></li>
-        </ol>
-
-        <p><a href="ftp://username:password@ftp.example.com/path/to/file.txt">Скачать файл</a></p>
-      </section>
-
       <section id="table" class="content-section">
         <h2>Таблица</h2>
         <table class="data-table">
@@ -128,6 +81,53 @@
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <section id="links" class="content-section">
+        <h2>Список гиперссылок</h2>
+        <ul class="links-list">
+          <li><a href="http://kubsu.ru/">КубГУ (http)</a></li>
+          <li><a href="https://kubsu.ru/">КубГУ (https)</a></li>
+          <li><a href="https://kubsu.ru/"><img src="image.jpg" alt="Фасад КубГУ" class="responsive-image"></a></li>
+          <li><a href="Catalog/second-page.html">Сокращённая внутренняя</a></li>
+          <li><a href="MainPage.html">Сокращённая главная</a></li>
+          <li><a href="#form">Ссылка на фрагмент текущей страницы</a></li>
+          <li><a href="https://www.kubsu.ru/ru/taxonomy/term/49?page=1&perpage=10&category=post">Ссылка с тремя параметрами</a></li>
+          <li><a href="https://www.kubsu.ru/ru/taxonomy/term/49#zone-footer-wrapper">Ссылка с параметром id</a></li>
+          <li><a href="./MainPage.html">относительная ссылка в текущем каталоге</a></li>
+          <li><a href="./about/about.html">относительная ссылка в каталоге about</a></li>
+          <li><a href="../Catalog/third-page.html">На уровень выше</a></li>
+          <li><a href="../../Catalog/catalog2/fourth-page.html">На два уровня выше</a></li>
+          <li>В тексте <a href="https://kubsu.ru/">ссылка</a> внутри абзаца.</li>
+          <li><a href="https://example.com/page#section-id">Фрагмент стороннего сайта</a></li>
+          <li>
+            <!-- Карта изображения с картинкой КубГУ -->
+            <div class="image-map-container">
+              <map name="kubgu-map">
+                <!-- Прямоугольная область - левая часть здания -->
+                <area shape="rect" coords="50,100,300,400" href="https://kubsu.ru" alt="Основной сайт КубГУ">
+                <!-- Круглая область - правая часть здания -->
+                <area shape="circle" coords="600,250,80" href="https://kubsu.ru/index.php" alt="Главная страница КубГУ">
+                <!-- Дополнительная область - центральная часть -->
+                <area shape="poly" coords="350,150,450,150,450,350,350,350" href="https://kubsu.ru/ru/university" alt="Об университете">
+              </map>
+              <img src="kubgu_fasad_1000h390.jpg" usemap="#kubgu-map" alt="Фасад КубГУ с интерактивными областями" class="map-image">
+            </div>
+          </li>
+          <li><a href="">Пустой href</a></li>
+          <li><a>Без href</a></li>
+          <li><a href="https://kubsu.ru/" rel="nofollow">nofollow</a></li>
+          <li><a href="https://kubsu.ru/noindex.html" rel="noindex">noindex</a></li>
+        </ul>
+
+        <h3>Список ссылок с title</h3>
+        <ol class="title-links">
+          <li><a href="http://kubsu.ru" title="Вот">Сайт КубГУ</a></li>
+          <li><a href="http://kubsu.ru" title="Сайт">Сайт КубГУ</a></li>
+          <li><a href="http://kubsu.ru" title="КубГУ">Сайт КубГУ</a></li>
+        </ol>
+
+        <p><a href="ftp://username:password@ftp.example.com/path/to/file.txt">Скачать файл</a></p>
       </section>
 
       <section id="form" class="content-section">
