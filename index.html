@@ -7,7 +7,83 @@
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    .logo {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+    
+    .image-map-container {
+      max-width: 100%;
+    }
+    
+    /* Mobile First стили */
+    .content-order-mobile .table-section {
+      order: 1;
+    }
+    
+    .content-order-mobile .links-section {
+      order: 2;
+    }
+    
+    .content-order-mobile .form-section {
+      order: 3;
+    }
+    
+    /* Desktop стили */
+    @media (min-width: 768px) {
+      .content-order-desktop .table-section {
+        order: 2;
+      }
+      
+      .content-order-desktop .links-section {
+        order: 1;
+      }
+      
+      .content-order-desktop .form-section {
+        order: 3;
+      }
+      
+      /* Для десктопной версии показываем меню всегда развернутым */
+      .navbar-collapse {
+        display: block !important;
+      }
+      
+      .navbar-toggler {
+        display: none;
+      }
+      
+      .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    
+    /* Мобильное меню - всегда видимое */
+    @media (max-width: 767.98px) {
+      .navbar-collapse {
+        display: block !important;
+      }
+      
+      .navbar-toggler {
+        display: none;
+      }
+      
+      .navbar-nav {
+        flex-direction: column;
+      }
+      
+      .nav-item {
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -21,12 +97,10 @@
           </div>
         </div>
         <div class="col-12 col-md-6 mt-3 mt-md-0">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-secondary rounded">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
+          <nav class="navbar navbar-dark bg-secondary rounded">
+            <div class="container-fluid p-0">
+              <!-- Убираем кнопку-бургер и всегда показываем меню -->
+              <div class="navbar-collapse">
                 <ul class="navbar-nav w-100 justify-content-center">
                   <li class="nav-item">
                     <a class="nav-link" href="#links">Ссылки</a>
@@ -49,255 +123,259 @@
   <!-- Main Content -->
   <main class="py-4">
     <div class="container">
-      <!-- Table Section -->
-      <section id="table" class="mb-4">
-        <div class="row">
-          <div class="col-12">
-            <div class="card shadow">
-              <div class="card-header bg-primary text-white">
-                <h2 class="card-title mb-0">Таблица</h2>
-              </div>
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table table-striped table-hover mb-0">
-                    <thead class="table-dark">
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Название</th>
-                        <th scope="col">Описание</th>
-                        <th scope="col">Статус</th>
-                        <th scope="col">Дата создания</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Проект А</td>
-                        <td>Описание проекта А</td>
-                        <td><span class="badge bg-success">Активный</span></td>
-                        <td>2024-01-15</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Проект Б</td>
-                        <td>Описание проекта Б</td>
-                        <td><span class="badge bg-secondary">Завершен</span></td>
-                        <td>2024-02-20</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Проект В</td>
-                        <td>Описание проекта В</td>
-                        <td><span class="badge bg-warning text-dark">В разработке</span></td>
-                        <td>2024-03-10</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Проект Г</td>
-                        <td>Описание проекта Г</td>
-                        <td><span class="badge bg-info">Планируется</span></td>
-                        <td>2024-04-05</td>
-                      </tr>
-                      <tr class="table-info">
-                        <td colspan="2"><strong>Общее количество</strong></td>
-                        <td>4 проекта</td>
-                        <td>Разные статусы</td>
-                        <td>2024 год</td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>Проект Д</td>
-                        <td>Описание проекта Д</td>
-                        <td><span class="badge bg-primary">Тестирование</span></td>
-                        <td>2024-05-12</td>
-                      </tr>
-                    </tbody>
-                  </table>
+      <div class="content-order-mobile content-order-desktop d-flex flex-column">
+        
+        <!-- Links Section - Вторая на мобильных, первая на десктопе -->
+        <section id="links" class="links-section mb-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                  <h2 class="card-title mb-0">Список гиперссылок</h2>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <a href="http://kubsu.ru/" class="text-decoration-none">КубГУ (http)</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="https://kubsu.ru/" class="text-decoration-none">КубГУ (https)</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="https://kubsu.ru/" class="text-decoration-none">
+                        <img src="image.jpg" alt="Фасад КубГУ" class="img-fluid rounded" style="max-width: 200px;">
+                      </a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="Catalog/second-page.html" class="text-decoration-none">Сокращённая внутренняя</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="MainPage.html" class="text-decoration-none">Сокращённая главная</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="#form" class="text-decoration-none">Ссылка на фрагмент текущей страницы</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="https://www.kubsu.ru/ru/taxonomy/term/49?page=1&perpage=10&category=post" class="text-decoration-none">Ссылка с тремя параметрами</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="https://www.kubsu.ru/ru/taxonomy/term/49#zone-footer-wrapper" class="text-decoration-none">Ссылка с параметром id</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="./MainPage.html" class="text-decoration-none">относительная ссылка в текущем каталоге</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="./about/about.html" class="text-decoration-none">относительная ссылка в каталоге about</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="../Catalog/third-page.html" class="text-decoration-none">На уровень выше</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="../../Catalog/catalog2/fourth-page.html" class="text-decoration-none">На два уровня выше</a>
+                    </li>
+                    <li class="list-group-item">
+                      В тексте <a href="https://kubsu.ru/" class="text-decoration-none">ссылка</a> внутри абзаца.
+                    </li>
+                    <li class="list-group-item">
+                      <a href="https://example.com/page#section-id" class="text-decoration-none">Фрагмент стороннего сайта</a>
+                    </li>
+                    <li class="list-group-item">
+                      <!-- Карта изображения с картинкой КубГУ -->
+                      <div class="image-map-container">
+                        <map name="kubgu-map">
+                          <!-- Прямоугольная область - левая часть здания -->
+                          <area shape="rect" coords="50,100,300,400" href="https://kubsu.ru" alt="Основной сайт КубГУ">
+                          <!-- Круглая область - правая часть здания -->
+                          <area shape="circle" coords="600,250,80" href="https://kubsu.ru/index.php" alt="Главная страница КубГУ">
+                          <!-- Дополнительная область - центральная часть -->
+                          <area shape="poly" coords="350,150,450,150,450,350,350,350" href="https://kubsu.ru/ru/university" alt="Об университете">
+                        </map>
+                        <img src="kubgu_fasad_1000h390.jpg" usemap="#kubgu-map" alt="Фасад КубГУ с интерактивными областями" class="img-fluid rounded shadow">
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="" class="text-decoration-none">Пустой href</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a class="text-decoration-none">Без href</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="https://kubsu.ru/" rel="nofollow" class="text-decoration-none">nofollow</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="https://kubsu.ru/noindex.html" rel="noindex" class="text-decoration-none">noindex</a>
+                    </li>
+                  </ul>
+
+                  <h3 class="mt-4 mb-3">Список ссылок с title</h3>
+                  <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">
+                      <a href="http://kubsu.ru" title="Вот" class="text-decoration-none">Сайт КубГУ</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="http://kubsu.ru" title="Сайт" class="text-decoration-none">Сайт КубГУ</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="http://kubsu.ru" title="КубГУ" class="text-decoration-none">Сайт КубГУ</a>
+                    </li>
+                  </ol>
+
+                  <p class="mt-3">
+                    <a href="ftp://username:password@ftp.example.com/path/to/file.txt" class="text-decoration-none">Скачать файл</a>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Links Section -->
-      <section id="links" class="mb-4">
-        <div class="row">
-          <div class="col-12">
-            <div class="card shadow">
-              <div class="card-header bg-success text-white">
-                <h2 class="card-title mb-0">Список гиперссылок</h2>
-              </div>
-              <div class="card-body">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <a href="http://kubsu.ru/" class="text-decoration-none">КубГУ (http)</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://kubsu.ru/" class="text-decoration-none">КубГУ (https)</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://kubsu.ru/" class="text-decoration-none">
-                      <img src="image.jpg" alt="Фасад КубГУ" class="img-fluid rounded" style="max-width: 200px;">
-                    </a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="Catalog/second-page.html" class="text-decoration-none">Сокращённая внутренняя</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="MainPage.html" class="text-decoration-none">Сокращённая главная</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="#form" class="text-decoration-none">Ссылка на фрагмент текущей страницы</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://www.kubsu.ru/ru/taxonomy/term/49?page=1&perpage=10&category=post" class="text-decoration-none">Ссылка с тремя параметрами</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://www.kubsu.ru/ru/taxonomy/term/49#zone-footer-wrapper" class="text-decoration-none">Ссылка с параметром id</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="./MainPage.html" class="text-decoration-none">относительная ссылка в текущем каталоге</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="./about/about.html" class="text-decoration-none">относительная ссылка в каталоге about</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="../Catalog/third-page.html" class="text-decoration-none">На уровень выше</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="../../Catalog/catalog2/fourth-page.html" class="text-decoration-none">На два уровня выше</a>
-                  </li>
-                  <li class="list-group-item">
-                    В тексте <a href="https://kubsu.ru/" class="text-decoration-none">ссылка</a> внутри абзаца.
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://example.com/page#section-id" class="text-decoration-none">Фрагмент стороннего сайта</a>
-                  </li>
-                  <li class="list-group-item">
-                    <!-- Карта изображения с картинкой КубГУ -->
-                    <div class="image-map-container">
-                      <map name="kubgu-map">
-                        <!-- Прямоугольная область - левая часть здания -->
-                        <area shape="rect" coords="50,100,300,400" href="https://kubsu.ru" alt="Основной сайт КубГУ">
-                        <!-- Круглая область - правая часть здания -->
-                        <area shape="circle" coords="600,250,80" href="https://kubsu.ru/index.php" alt="Главная страница КубГУ">
-                        <!-- Дополнительная область - центральная часть -->
-                        <area shape="poly" coords="350,150,450,150,450,350,350,350" href="https://kubsu.ru/ru/university" alt="Об университете">
-                      </map>
-                      <img src="kubgu_fasad_1000h390.jpg" usemap="#kubgu-map" alt="Фасад КубГУ с интерактивными областями" class="img-fluid rounded shadow">
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="" class="text-decoration-none">Пустой href</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a class="text-decoration-none">Без href</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://kubsu.ru/" rel="nofollow" class="text-decoration-none">nofollow</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://kubsu.ru/noindex.html" rel="noindex" class="text-decoration-none">noindex</a>
-                  </li>
-                </ul>
-
-                <h3 class="mt-4 mb-3">Список ссылок с title</h3>
-                <ol class="list-group list-group-numbered">
-                  <li class="list-group-item">
-                    <a href="http://kubsu.ru" title="Вот" class="text-decoration-none">Сайт КубГУ</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="http://kubsu.ru" title="Сайт" class="text-decoration-none">Сайт КубГУ</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="http://kubsu.ru" title="КубГУ" class="text-decoration-none">Сайт КубГУ</a>
-                  </li>
-                </ol>
-
-                <p class="mt-3">
-                  <a href="ftp://username:password@ftp.example.com/path/to/file.txt" class="text-decoration-none">Скачать файл</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Form Section -->
-      <section id="form" class="mb-4">
-        <div class="row">
-          <div class="col-12">
-            <div class="card shadow">
-              <div class="card-header bg-warning text-dark">
-                <h2 class="card-title mb-0">Форма</h2>
-              </div>
-              <div class="card-body">
-                <form action="#" method="post">
-                  <div class="row g-3">
-                    <div class="col-12 col-md-6">
-                      <label for="fio" class="form-label">ФИО</label>
-                      <input type="text" class="form-control" id="fio" name="fio" required>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <label for="phone" class="form-label">Телефон</label>
-                      <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]+" required>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <label for="email" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <label for="bday" class="form-label">Дата рождения</label>
-                      <input type="date" class="form-control" id="bday" name="bday" required>
-                    </div>
-                    <div class="col-12">
-                      <label class="form-label">Пол</label>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="m" required>
-                        <label class="form-check-label" for="male">Мужской</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" id="female" value="f">
-                        <label class="form-check-label" for="female">Женский</label>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <label for="langs" class="form-label">Любимый язык</label>
-                      <select class="form-select" id="langs" name="langs[]" multiple required>
-                        <option>Pascal</option>
-                        <option>C</option>
-                        <option>C++</option>
-                        <option>JavaScript</option>
-                        <option>PHP</option>
-                        <option>Python</option>
-                        <option>Java</option>
-                        <option>Haskell</option>
-                        <option>Clojure</option>
-                        <option>Prolog</option>
-                        <option>Scala</option>
-                      </select>
-                    </div>
-                    <div class="col-12">
-                      <label for="bio" class="form-label">Биография</label>
-                      <textarea class="form-control" id="bio" name="bio" rows="5" required></textarea>
-                    </div>
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="agree" name="agree" required>
-                        <label class="form-check-label" for="agree">С контрактом ознакомлен</label>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-success btn-lg">Сохранить</button>
-                    </div>
+        <!-- Table Section - Первая на мобильных, вторая на десктопе -->
+        <section id="table" class="table-section mb-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                  <h2 class="card-title mb-0">Таблица</h2>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-hover mb-0">
+                      <thead class="table-dark">
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Название</th>
+                          <th scope="col">Описание</th>
+                          <th scope="col">Статус</th>
+                          <th scope="col">Дата создания</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Проект А</td>
+                          <td>Описание проекта А</td>
+                          <td><span class="badge bg-success">Активный</span></td>
+                          <td>2024-01-15</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Проект Б</td>
+                          <td>Описание проекта Б</td>
+                          <td><span class="badge bg-secondary">Завершен</span></td>
+                          <td>2024-02-20</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Проект В</td>
+                          <td>Описание проекта В</td>
+                          <td><span class="badge bg-warning text-dark">В разработке</span></td>
+                          <td>2024-03-10</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Проект Г</td>
+                          <td>Описание проекта Г</td>
+                          <td><span class="badge bg-info">Планируется</span></td>
+                          <td>2024-04-05</td>
+                        </tr>
+                        <tr class="table-info">
+                          <td colspan="2"><strong>Общее количество</strong></td>
+                          <td>4 проекта</td>
+                          <td>Разные статусы</td>
+                          <td>2024 год</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Проект Д</td>
+                          <td>Описание проекта Д</td>
+                          <td><span class="badge bg-primary">Тестирование</span></td>
+                          <td>2024-05-12</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <!-- Form Section - Третья на мобильных, третья на десктопе -->
+        <section id="form" class="form-section mb-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="card shadow">
+                <div class="card-header bg-warning text-dark">
+                  <h2 class="card-title mb-0">Форма</h2>
+                </div>
+                <div class="card-body">
+                  <form action="#" method="post">
+                    <div class="row g-3">
+                      <div class="col-12 col-md-6">
+                        <label for="fio" class="form-label">ФИО</label>
+                        <input type="text" class="form-control" id="fio" name="fio" required>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label for="phone" class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]+" required>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label for="bday" class="form-label">Дата рождения</label>
+                        <input type="date" class="form-control" id="bday" name="bday" required>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Пол</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="male" value="m" required>
+                          <label class="form-check-label" for="male">Мужской</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="female" value="f">
+                          <label class="form-check-label" for="female">Женский</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="langs" class="form-label">Любимый язык</label>
+                        <select class="form-select" id="langs" name="langs[]" multiple required>
+                          <option>Pascal</option>
+                          <option>C</option>
+                          <option>C++</option>
+                          <option>JavaScript</option>
+                          <option>PHP</option>
+                          <option>Python</option>
+                          <option>Java</option>
+                          <option>Haskell</option>
+                          <option>Clojure</option>
+                          <option>Prolog</option>
+                          <option>Scala</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label for="bio" class="form-label">Биография</label>
+                        <textarea class="form-control" id="bio" name="bio" rows="5" required></textarea>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="agree" name="agree" required>
+                          <label class="form-check-label" for="agree">С контрактом ознакомлен</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-success btn-lg">Сохранить</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
     </div>
   </main>
 
